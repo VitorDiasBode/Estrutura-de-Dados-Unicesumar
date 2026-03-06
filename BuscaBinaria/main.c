@@ -11,7 +11,7 @@ int buscaBinaria(int vetor[], int tamanho, int valor)
 
         if (vetor[meio] == valor)
         {
-            return vetor[meio];
+            return meio;
         }
         if (vetor[meio] < valor)
         {
@@ -22,5 +22,30 @@ int buscaBinaria(int vetor[], int tamanho, int valor)
             fim = meio -1;
         }
     }
+
+    return -1;
     
 } 
+
+int main(void)
+{
+    int vetor[] = {10, 20, 30, 40, 50, 60, 70};
+    int tamanho = 7;
+    int valor;
+
+    printf("Digite o valor a buscar: ");
+    scanf("%d", &valor);
+
+    int resultado = buscaBinaria(vetor, tamanho, valor);
+
+    if (resultado != -1)
+    {
+        printf("Valor encontrado na posicao %d", resultado);
+    }
+    else
+    {
+        printf("Valor nao encontrado");
+    }
+
+    return 0;
+}
